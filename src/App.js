@@ -1,21 +1,25 @@
 import {useState} from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import BookListing from './Components/BookListing';
-import SearchBook from './Components/SearchBook';
+
+import Header from './Components/Header';
+import HomePage from './Pages/HomePage'
+import BookPage from './Pages/BookPage'
+import ContactPage from './Pages/ContactPage';
+
 
 function App() {
-  const [books, setBooks] = useState([
-    { id: 1, title: "Atomic Habits", author: "James Clear" },
-    { id: 2, title: "Deep Work", author: "Cal Newport" },
-    { id: 3, title: "The Pragmatic Programmer", author: "Andy Hunt & Dave Thomas" },
-  ]);
+
   return (
-   <>
-    <h1>Book Listing</h1>
-    <SearchBook books={books} setBooks={setBooks}  />
-    <BookListing books={books} setBooks={setBooks}  />
-   </>
+   <BrowserRouter>
+      <Header />
+      <Routes>
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/book" element={<BookPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
