@@ -12,6 +12,20 @@ export default function BookListing( {books, setBooks}) {
     setBooks (result)
   }
 
+
+  function handleUpdate (event, BookID) {
+    const updatedBooks = books.map(book => {                        // We go through each book in the list.
+      if (book.id === BookID) {                                     // "We check: is this the book that was clicked? (The one whose status we want to change?)"
+        return {                                                    // "If yes, we copy all the existing book data using { ...book }, but we change just the status."
+          ...book,
+          status: book.status === 'read' ? 'unread' : 'read'
+        };
+      }
+      return book;                                                  // "If this is not the book we're updating, we just return it as-is."
+    });
+    setBooks(updatedBooks);
+  }
+
   return (
     <>
     <Table responsive>
@@ -20,6 +34,7 @@ export default function BookListing( {books, setBooks}) {
           <th>No.</th>
           <th>Book Title</th>
           <th>Book Author</th>
+          <th>Status</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -29,7 +44,9 @@ export default function BookListing( {books, setBooks}) {
               <td>{index+1}</td>
               <td>{book.title}</td>
               <td>{book.author}</td>
+              <td>{book.status}</td>
               <td><Button variant="danger" name="btnDelete" onClick={(event)=>handleDelete(event,book.id)}>Danger</Button></td>
+               <td><Button variant="danger" name="btnDelete" onClick={(event)=>handleUpdate(event,book.id)}>Update</Button></td>
             </tr>
          ))}
       </tbody>

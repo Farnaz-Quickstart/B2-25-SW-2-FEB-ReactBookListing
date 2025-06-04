@@ -14,6 +14,7 @@ export default function Header() {
           <Nav className="me-auto">
             <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/book">Book Listing</Nav.Link>
+            <Nav.Link href="/register">Book Registration</Nav.Link>
             <Nav.Link href="/contact">Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
