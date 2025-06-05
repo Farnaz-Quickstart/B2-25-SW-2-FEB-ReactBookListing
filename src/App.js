@@ -7,7 +7,6 @@ import Header from './Components/Header';
 import HomePage from './Pages/HomePage'
 import BookPage from './Pages/BookPage'
 import ContactPage from './Pages/ContactPage';
-import BookRegistration from './Components/BookRegistration';
 
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
       <Routes>
           <Route path="/home" element={<HomePage />} />
           <Route path="/book" element={<BookPage />} />
-          <Route path="/register" element={<BookRegistration />} />
           <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </BrowserRouter>

@@ -35,7 +35,6 @@ export default function BookListing( {books, setBooks}) {
           <th>Book Title</th>
           <th>Book Author</th>
           <th>Status</th>
-          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -46,7 +45,7 @@ export default function BookListing( {books, setBooks}) {
               <td>{book.author}</td>
               <td>{book.status}</td>
               <td><Button variant="danger" name="btnDelete" onClick={(event)=>handleDelete(event,book.id)}>Danger</Button></td>
-               <td><Button variant="danger" name="btnDelete" onClick={(event)=>handleUpdate(event,book.id)}>Update</Button></td>
+              
             </tr>
          ))}
       </tbody>

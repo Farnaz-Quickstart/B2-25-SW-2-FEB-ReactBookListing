@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import SearchBook from '../Components/SearchBook'
 import BookListing from '../Components/BookListing';
-import BookRegistration from '../Components/BookRegistration';
+import BookAdding from '../Components/BookAdding';
 
 
 export default function BookPage() {
@@ -15,7 +15,7 @@ export default function BookPage() {
     <>
       <SearchBook books={books} setBooks={setBooks} />
       <BookListing books={books} setBooks={setBooks} />
-      <BookRegistration books={books} setBooks={setBooks} />
+      <BookAdding books={books} setBooks={setBooks} />
     </>
   )
 }
